@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 from django.db import models
 from django.template.defaultfilters import slugify
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 Job_Type= (
@@ -11,6 +11,7 @@ Job_Type= (
 
 
 class Job(models.Model):
+    ownerr =models.ForeignKey(User ,related_name='job_owner',on_delete=models.CASCADE)
     title =models.CharField(max_length=100)
     #location
     #job_type is part time or full time here we will use choices
@@ -42,8 +43,6 @@ class Category(models.Model):
         return self.name
     
 
-
-
 #model to form
 
 class Apply(models.Model):
@@ -56,5 +55,10 @@ class Apply(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+
+
     
 

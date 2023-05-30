@@ -4,8 +4,10 @@ learning (reading) with django:
    -django template language
    -django model fields
    -django template date formate (date)
-   -static files :[front end]images ,css ,js]
    -django slug : models ,view ,url ,template
+   -django user authontication
+   -djangon city and phone field
+   -static files :[front end][images ,css ,js]
    -media files :[upload] imges or videos user upload.
 
 Job: 
@@ -23,7 +25,7 @@ Job:
  -apply job
  -post job
 
-Bolg:
+Blog:
  -title
  -description
  -created at
@@ -37,3 +39,4 @@ Bolg:
 contct :
 about :
 home:
+accounts:

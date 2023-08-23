@@ -3,8 +3,10 @@ from django.shortcuts import redirect, render
 from .models import Job
 from django.core.paginator import Paginator
 from .form import ApplyForm ,JobForm
+from .filters import JobFilter
 
 from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -13,12 +15,17 @@ from django.contrib.auth.decorators import login_required
 #i want to return all jobs where is it ?? in model so i imported the job class
 def job_list(request):
     job_list =Job.objects.all()
+
+
+    filter = JobFilter(request.GET, queryset=job_list)
+    job_list=filter.qs
+
     p = Paginator(job_list, 2)  # creating a paginator object
     page_number = request.GET.get('page')
     page_obj = p.get_page(page_number)
     #context : usint variable from here to html page
     #context={name in html : name_variable}
-    context ={'jobs' :page_obj ,'p' :p}
+    context ={'jobs' :page_obj ,'p' :p ,'filter':filter}
 
     return render(request ,'job/job_list.html',context)
 

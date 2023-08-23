@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'blog',
     'django_bootstrap5',
     'contact',
+    'django_filters',
+
+      # Other apps…
+    "phonenumber_field",
+     'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +146,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/jobs'
+
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com' 
+
+EMAIL_PORT = '587'
+
+EMAIL_HOST_USER = 'pythondevloper33@gmail.com'
+
+# EMAIL_HOST_PASSWORD = '8802790772'
+
+EMAIL_USE_TLS = True
+

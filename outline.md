@@ -7,6 +7,8 @@ learning (reading) with django:
    -django slug : models ,view ,url ,template
    -django user authontication
    -djangon city and phone field
+   -django-filter
+   -django send mail
    -static files :[front end][images ,css ,js]
    -media files :[upload] imges or videos user upload.
 
